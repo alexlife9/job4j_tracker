@@ -32,7 +32,7 @@ public class Tracker {
         int size = 0;
         for (int index = 0; index < items.length; index++) {
             Item item = items[index];
-            if (item.getName() == key) {
+            if (item.getName().equals(key)) {
                 namesWithKey[size] = item;
                 size++;
             }
@@ -66,12 +66,11 @@ public class Tracker {
 
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
-        boolean rsl = false;
-        if (index == id) {
-            item.setName(index) = item.getName(index);
-
+        if (index != -1) {
+            item.setId(id);
+            items[index] = item;
+            return true;
         }
-        return rsl;
-
+        return false;
     }
 }
