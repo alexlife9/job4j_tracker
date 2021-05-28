@@ -11,5 +11,10 @@ public class StartUI {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
         String currentDateTimeFormat = currentDateTime.format(formatter);
         System.out.println(currentDateTimeFormat);
+
+        Tracker tracker = new Tracker();
+        Item items = new Item();
+        tracker.add(items);
+        System.out.println(tracker.findById(items.getId()));
     }
 }
