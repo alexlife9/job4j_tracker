@@ -10,7 +10,7 @@ public class ShopDropTest {
     @Test
     public void whenDropFirst() {
         Product[] products = new Product[2];
-        products[0] = new Product("Milk", 10);
+        products[0] = new Product("Milk", 9);
         products[1] = new Product("Bread", 4);
         Product[] rsl = ShopDrop.delete(products, 0);
         assertThat(rsl[0].getName(), is("Bread"));
