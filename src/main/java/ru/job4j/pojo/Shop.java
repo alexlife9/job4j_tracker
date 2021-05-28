@@ -16,9 +16,8 @@ public class Shop {
     }
 
     public static int indexOfNull(Product[] products) {
-        int n = 0;
+        int n = -1;
         for (int i = 0; i < products.length; i++) {
-            Product product = products[i];
             if (products[i] == null) {
                 n = i;
                 break;
