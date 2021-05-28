@@ -28,7 +28,7 @@ public class Library {
         System.out.println();
         System.out.println("Выводим книгу именем \"Clean code\"");
         for (Book bk : books) {
-            if (bk == cleanCode) {
+            if (bk.getName().equals("Clean code")) {
                 System.out.println(bk.getName() + " - " + bk.getQuantity() + " стр.");
             }
         }
