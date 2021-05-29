@@ -45,4 +45,13 @@ public class Item {
         LocalDate currentDate = LocalDate.now();
         System.out.println("Текущая дата: " + currentDate);
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", created=" + created +
+                '}';
+    }
 }
