@@ -11,12 +11,12 @@ public class MagicBall {
         String name = input.nextLine();
         if (answer == 1) {
             System.out.println(name + " - ДА");
-        } else {
-            if (answer == 2) {
-                System.out.println(name + " - НЕТ");
-            } else {
-                System.out.println(name + " - МОЖЕТ БЫТЬ");
-            }
+        }
+        else if (answer == 2) {
+            System.out.println(name + " - НЕТ");
+        }
+        else {
+            System.out.println(name + " - МОЖЕТ БЫТЬ");
         }
     }
 }
