@@ -9,6 +9,7 @@ public class College {
         student.setGroup("Стажер");
         student.setCreated(new Date());
 
-        System.out.println("ФИО: " + student.getName() + ". Группа: " + student.getGroup() + ". Дата поступления: " + student.getCreated());
+        System.out.println("ФИО: " + student.getName() + ". Группа: "
+                + student.getGroup() + ". Дата поступления: " + student.getCreated());
     }
 }
