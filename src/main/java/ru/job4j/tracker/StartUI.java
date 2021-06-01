@@ -21,7 +21,13 @@ public class StartUI {
             } else if (select == 1) {
                 System.out.println("=== Show all items ====");
                 Item[] allItems = tracker.findAll();
-                System.out.println(allItems);
+                if (allItems.length > 0) {
+                    for (Item item : allItems) {
+                        System.out.println(item);
+                    }
+                } else {
+                    System.out.println("Items not found");
+                }
 
             } else if (select == 2) {
                 System.out.println("=== Edit item ====");
@@ -61,6 +67,7 @@ public class StartUI {
                 "Delete item", "Find item by id", "Find items by name",
                 "Exit Program"
         };
+        System.out.println();
         System.out.println("Menu:");
         for (int i = 0; i < menu.length; i++) {
             System.out.println(i + ". " + menu[i]);
