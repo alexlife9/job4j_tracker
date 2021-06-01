@@ -26,7 +26,7 @@ public class StartUI {
                         System.out.println(item);
                     }
                 } else {
-                    System.out.println("Items not found");
+                    System.out.println("Items not found!");
                 }
 
             } else if (select == 2) {
@@ -39,11 +39,18 @@ public class StartUI {
                 if (tracker.replace(id, item)) {
                     System.out.print("Successfully! New Item name: " + item);
                 } else {
-                    System.out.println("ID not found");
+                    System.out.println("ID not found!");
                 }
 
             } else if (select == 3) {
                 System.out.println("=== Delete item ====");
+                System.out.print("Enter ID item: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                if (tracker.delete(id)) {
+                    System.out.println("Successfully! Item with ID" + id + " delete");
+                } else {
+                    System.out.println("Item not found!");
+                }
 
             } else if (select == 4) {
                 System.out.println("=== Find item by Id ====");
