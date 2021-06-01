@@ -10,26 +10,13 @@ public class StartUI {
             showMenu();
             System.out.print("Select: ");
             int select = Integer.valueOf(scanner.nextLine());
-            if (select != 6) {
-                System.out.println("Пользователь выбрал: " + select);
-            } else {
-                run = false;
-            }
-        }
-    }
-
-/*        boolean run = true;
-        while (run) {
-            this.showMenu();
-            System.out.print("Select: ");
-            int select = Integer.valueOf(scanner.nextLine());
-
             if (select == 0) {
                 System.out.println("=== Create a new Item ====");
                 System.out.print("Enter name: ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.add(item);
+                System.out.println("New name Item: " + item);
 
             } else if (select == 1) {
                 System.out.println("=== Show all items ====");
@@ -66,7 +53,7 @@ public class StartUI {
             }
 
         }
-    }*/
+    }
 
     private void showMenu() {
         String[] menu = {
