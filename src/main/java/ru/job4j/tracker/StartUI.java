@@ -32,13 +32,14 @@ public class StartUI {
             } else if (select == 2) {
                 System.out.println("=== Edit item ====");
                 System.out.print("Enter ID item: ");
-                String name = scanner.nextLine();
                 int id = Integer.parseInt(scanner.nextLine());
+                System.out.println("Enter new name: ");
+                String name = scanner.nextLine();
                 Item item = new Item(name);
                 if (tracker.replace(id, item)) {
-                    System.out.print("Successfully!");
+                    System.out.print("Successfully! New Item name: " + item);
                 } else {
-                    System.out.println("Not found");
+                    System.out.println("ID not found");
                 }
 
             } else if (select == 3) {
@@ -55,9 +56,7 @@ public class StartUI {
 
             } else if (select > 6) {
                 System.out.println("Wrong choice!!!");
-                System.out.println();
             }
-
         }
     }
 
