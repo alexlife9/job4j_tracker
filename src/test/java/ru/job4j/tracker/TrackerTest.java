@@ -39,4 +39,32 @@ public class TrackerTest {
         tracker.delete(id);
         assertThat(tracker.findById(id), is(nullValue()));
     }
+
+    @Test
+    public void whenReplaceItem() {
+        Tracker tracker = new Tracker(); //Создаем объект tracker.
+        Item item = new Item("new item"); //Создаем объект item.
+        tracker.add(item); // Добавляем item в tracker. После этой операции у нас есть id.
+        String[] answers = {//Достаем item.id и создаем массив с ответами пользователя.
+                String.valueOf(item.getId()), /* id сохраненной заявки в объект tracker. */
+                "replaced item"
+        };
+        StartUI.replaceItem(new StubInput(answers), tracker); //Вызываем  метод replaceItem
+        Item replaced = tracker.findById(item.getId()); //Ищем по item.id замененный item
+        assertThat(replaced.getName(), is("replaced item")); //Сравниваем имя заявки с ожидаемой
+    }
+
+    @Test
+    public void whenDeleteItem() {
+        Tracker tracker = new Tracker(); //Создаем объект tracker.
+        Item item = new Item("new item"); //Создаем объект item.
+        tracker.add(item); // Добавляем item в tracker. После этой операции у нас есть id.
+        String[] answers = {//Достаем item.id и создаем массив с ответами пользователя.
+                String.valueOf(item.getId()), /* id сохраненной заявки в объект tracker. */
+                null
+        };
+        StartUI.deteleItem(new StubInput(answers), tracker); //Вызываем  метод deteleItem
+        Item deleted = tracker.findById(item.getId()); //Ищем по item.id удаленный item
+        assertThat(deleted.getId(), is(nullValue())); //Сравниваем Id заявки с ожидаемой
+    }
 }
