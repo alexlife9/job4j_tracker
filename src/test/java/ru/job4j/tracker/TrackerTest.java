@@ -60,11 +60,9 @@ public class TrackerTest {
         Item item = new Item("new item"); //Создаем объект item.
         tracker.add(item); // Добавляем item в tracker. После этой операции у нас есть id.
         String[] answers = {//Достаем item.id и создаем массив с ответами пользователя.
-                String.valueOf(item.getId()), /* id сохраненной заявки в объект tracker. */
-                null
-        };
+                String.valueOf(item.getId())};
         StartUI.deteleItem(new StubInput(answers), tracker); //Вызываем  метод deteleItem
         Item deleted = tracker.findById(item.getId()); //Ищем по item.id удаленный item
-        assertThat(deleted.getId(), is(nullValue())); //Сравниваем Id заявки с ожидаемой
+        assertThat(deleted, is(nullValue())); //Сравниваем Id заявки с ожидаемой
     }
 }
