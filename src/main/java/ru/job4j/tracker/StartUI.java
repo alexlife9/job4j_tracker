@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 public class StartUI {
 
-    public static void createItem(Input input, Tracker tracker) {
+/*    public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ====");
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
@@ -65,9 +65,19 @@ public class StartUI {
         } else {
             System.out.println("Items with name " + name + " not found!");
         }
+    }*/
+
+    public void init(Input input, Tracker tracker, UserAction[] actions) {
+        boolean run = true;
+        while (run) {
+            this.showMenu(actions);
+            int select = input.askInt("Select: "); //получаем от пользователя пункт меню.
+            UserAction action = actions[select]; //параметр используем в качестве индекса в массиве
+            run = action.execute(input, tracker);
+        }
     }
 
-    public void init(Input input, Tracker tracker) {
+    /*public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
             showMenu();
@@ -97,9 +107,29 @@ public class StartUI {
                 System.out.println("Wrong choice!!!");
             }
         }
+    }*/
+    private void showMenu(UserAction[] actions) {
+        System.out.println("Menu.");
+        for (int index = 0; index < actions.length; index++) {
+            System.out.println(index + ". " + actions[index].name());
+        }
     }
 
-    private void showMenu() {
+    public static void main(String[] args) {
+        Input input = new ConsoleInput();
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new CreateAction(),
+                new AllAction(),
+                new ReplaceAction(),
+                new DeleteAction(),
+                new FindIdAction(),
+                new FindNameAction(),
+        };
+        new StartUI().init(input, tracker, actions);
+    }
+
+/*    private void showMenu() {
         String[] menu = {
                 "Add new Item", "Show all items", "Edit item",
                 "Delete item", "Find item by id", "Find items by name",
@@ -116,5 +146,5 @@ public class StartUI {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         new StartUI().init(input, tracker);
-    }
+    }*/
 }
