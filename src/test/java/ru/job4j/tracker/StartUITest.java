@@ -14,6 +14,7 @@ public class StartUITest {
                 new String[] {"0", "1"}
         );
         Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("Test1"));
         UserAction[] actions = {
                 new AllAction(out),
                 new ExitAction(out)
@@ -24,7 +25,7 @@ public class StartUITest {
                         + "0. Show all items" + System.lineSeparator()
                         + "1. Exit Program" + System.lineSeparator()
                         + "=== Show all items ====" + System.lineSeparator()
-                        + "Items not found!" + System.lineSeparator()
+                        + item.toString() + System.lineSeparator()
                         + "Menu:" + System.lineSeparator()
                         + "0. Show all items" + System.lineSeparator()
                         + "1. Exit Program" + System.lineSeparator()
@@ -35,10 +36,10 @@ public class StartUITest {
     public void whenFindByName() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0", "test1", "1"}
+                new String[] {"0", "Test1", "1"}
         );
         Tracker tracker = new Tracker();
-
+        Item item = tracker.add(new Item("Test1"));
         UserAction[] actions = {
                 new FindNameAction(out),
                 new ExitAction(out)
@@ -49,7 +50,7 @@ public class StartUITest {
                         + "0. Find items by name" + System.lineSeparator()
                         + "1. Exit Program" + System.lineSeparator()
                         + "=== Find items by name ====" + System.lineSeparator()
-                        + "Items with name test1 not found!" + System.lineSeparator()
+                        + item.toString() + System.lineSeparator()
                         + "Menu:" + System.lineSeparator()
                         + "0. Find items by name" + System.lineSeparator()
                         + "1. Exit Program" + System.lineSeparator()
@@ -60,9 +61,10 @@ public class StartUITest {
     public void whenFindById() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"0", "2", "1"}
+                new String[] {"0", "3", "1"}
         );
         Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("2"));
         UserAction[] actions = {
                 new FindIdAction(out),
                 new ExitAction(out)
@@ -73,7 +75,7 @@ public class StartUITest {
                         + "0. Find item by Id" + System.lineSeparator()
                         + "1. Exit Program" + System.lineSeparator()
                         + "=== Find item by Id ====" + System.lineSeparator()
-                        + "Item with Id 2 not found!" + System.lineSeparator()
+                        + item.toString() + System.lineSeparator()
                         + "Menu:" + System.lineSeparator()
                         + "0. Find item by Id" + System.lineSeparator()
                         + "1. Exit Program" + System.lineSeparator()
