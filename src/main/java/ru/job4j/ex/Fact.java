@@ -15,5 +15,4 @@ public class Fact {
     public static void main(String[] args) {
         System.out.println("Факториал заданного числа равен " + calc(3));
     }
-
 }
