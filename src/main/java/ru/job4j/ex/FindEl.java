@@ -16,9 +16,11 @@ public class FindEl {
     }
 
     public static void main(String[] args) throws ElementNotFoundException {
+        String[] elements = new String[]{"test1", "test2"};
         try {
-            indexOf();
+            System.out.println(indexOf(elements,"test3"));
         } catch (ElementNotFoundException e) {
             e.printStackTrace();
+        }
     }
 }
