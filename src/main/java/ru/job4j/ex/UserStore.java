@@ -10,7 +10,7 @@ public class UserStore {
                 return user;
             }
         }
-        return throw new UserNotFoundException("User not found");
+        throw new UserNotFoundException("User not found");
     }
 
     public static boolean validate(User user) throws UserInvalidException {
@@ -26,9 +26,15 @@ public class UserStore {
                 new User("Alex", true),
                 new User("Test9", false)
         };
-        User user = findUser(users, "Petr Arsentev");
-        if (validate(user)) {
-            System.out.println("This user has an access");
+        try {
+            User user = findUser(users, "Test");
+            if (validate(user)) {
+                System.out.println("This user has an access");
+            }
+        } catch (UserInvalidException usInEx) {
+            usInEx.printStackTrace();
+        } catch (UserNotFoundException usNoFoEx) {
+            usNoFoEx.printStackTrace();
         }
     }
 }
