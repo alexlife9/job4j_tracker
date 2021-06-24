@@ -19,13 +19,9 @@ public class AllAction implements UserAction {
         out.println("=== Show all items ====");
         //Item[] allItems = tracker.findAll();
         List<Item> items = tracker.findAll();
-        if (allItems.length > 0) {
             for (Item item : items) {
                 out.println(item);
             }
-        } else {
-            out.println("Items not found!");
-        }
         return true;
     }
 }

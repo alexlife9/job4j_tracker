@@ -28,12 +28,11 @@ public final class SingleTracker {
     }
 
     //public Item[] findByName(String key) {
-    public List<Item> items = new ArrayList<>() {
-        //return tracker.findByName(key);
-        return ;
+    public List<Item> findByName(String key) {
+        return tracker.findByName(key);
     }
 
-    public Item[] findAll() {
+    public List<Item> findAll() {
         return tracker.findAll();
     }
 
