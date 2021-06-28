@@ -20,9 +20,13 @@ public class FindNameAction implements UserAction {
         String name = input.askStr("Enter name: ");
         //Item[] items = tracker.findByName(name);
         List<Item> items = tracker.findByName(name);
+        if (items.size() > 0) {
             for (Item item : items) {
                 out.println(item);
             }
+        } else {
+            out.println("Items with name " + name + " not found!");
+        }
         return true;
     }
 }

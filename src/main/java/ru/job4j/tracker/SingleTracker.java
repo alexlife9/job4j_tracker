@@ -16,7 +16,7 @@ public final class SingleTracker {
         if (instance == null) {
             instance = new SingleTracker();
         }
-        return instance;
+        return SingleTracker.instance;
     }
 
     public Item add(Item item) {
