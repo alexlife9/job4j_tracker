@@ -33,21 +33,17 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
-        Log4File log = Log4File.getInstance();
-        log.add("New Item");
-        log.save();
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
-        List<UserAction> actions = new ArrayList<UserAction>() {
-            actions.add(new CreateAction(output)),
-            actions.add(new AllAction(output)),
-            actions.add(new ReplaceAction(output)),
-            actions.add(new DeleteAction(output)),
-            actions.add(new FindIdAction(output)),
-            actions.add(new FindNameAction(output)),
-            actions.add(new ExitAction(output))
-        };
+        List<UserAction> actions = new ArrayList<>();
+            actions.add(new CreateAction(output));
+            actions.add(new AllAction(output));
+            actions.add(new ReplaceAction(output));
+            actions.add(new DeleteAction(output));
+            actions.add(new FindIdAction(output));
+            actions.add(new FindNameAction(output));
+            actions.add(new ExitAction(output));
         new StartUI(output).init(input, tracker, actions);
     }
 }
