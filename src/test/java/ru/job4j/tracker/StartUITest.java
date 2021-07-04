@@ -16,10 +16,6 @@ public class StartUITest {
         Input in = new StubInput(new String[] {"0", "1"});
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Test1"));
-/*        UserAction[] actions = {
-                new AllAction(out),
-                new ExitAction(out)
-        };*/
         List<UserAction> actions = new ArrayList<>();
         actions.add(new AllAction(out));
         actions.add(new ExitAction(out));
@@ -69,10 +65,6 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[] {"0", String.valueOf(item.getId()), "1"}
         );
-/*        UserAction[] actions = {
-                new FindIdAction(out),
-                new ExitAction(out)
-        };*/
         List<UserAction> actions = new ArrayList<>();
         actions.add(new FindIdAction(out));
         actions.add(new ExitAction(out));
@@ -96,9 +88,6 @@ public class StartUITest {
                 new String[] {"0"}
         );
         Tracker tracker = new Tracker();
-/*        UserAction[] actions = {
-                new ExitAction(out)
-        };*/
         List<UserAction> actions = new ArrayList<>();
         actions.add(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
@@ -115,9 +104,6 @@ public class StartUITest {
                 new String[] {"1", "0"}
         );
         Tracker tracker = new Tracker();
-/*        UserAction[] actions = new UserAction[]{
-                new ExitAction(out)
-        };*/
         List<UserAction> actions = new ArrayList<>();
         actions.add(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
