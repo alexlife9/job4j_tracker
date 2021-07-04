@@ -1,4 +1,4 @@
-package ru.job4j.oop;
+/*package ru.job4j.oop;
 
 public class Gun {
     private int caliber;
@@ -16,7 +16,7 @@ public class Gun {
     public boolean IsOnTarget(int dice) {
         return (barrelLength + dice) > 100;
     }
-}
+}*/
 
 /*
 https://habr.com/ru/post/354046/
