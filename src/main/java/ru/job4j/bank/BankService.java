@@ -49,15 +49,17 @@ public class BankService {
         }
         return null;
     }
+
 //ищем счета юзера по паспорту
 //сравниваем где больше денег для перевода с одного счета на другой
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         Account scrAcc = findByRequisite(srcPassport, srcRequisite);
         Account destAcc = findByRequisite(destPassport, destRequisite);
-        if (scrAcc != null || destAcc != null || scrAcc.getBalance() > amount) {
-            scrAcc.setBalance() - amount;
-            destAcc.setBalance() + amount;
+        if (scrAcc != null && destAcc != null && amount > 0 && scrAcc.getBalance() > amount) {
+            scrAcc.setBalance(scrAcc.getBalance() - amount);
+            destAcc.setBalance(destAcc.getBalance() + amount);
+            return true;
         }
         return false;
     }
