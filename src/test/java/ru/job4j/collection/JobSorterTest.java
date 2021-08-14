@@ -62,7 +62,8 @@ public class JobSorterTest {
     public void whenJobByNameAndPriority() {
         Job o1 = new Job("Reboot bug", 0);
         Job o2 = new Job("Fix server", 1);
-        Comparator<Job> cmpJobNameAndPriority = new JobDescByNameLn().thenComparing(new JobDescByPriority());
+        Comparator<Job> cmpJobNameAndPriority =
+                new JobDescByNameLn().thenComparing(new JobDescByPriority());
         Comparator<Job> cmpDescByNameLn = new JobDescByNameLn();
         int rsl = cmpJobNameAndPriority.compare(o1, o2);
         assertEquals(0, cmpDescByNameLn.compare(o1, o2));
