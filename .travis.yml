@@ -18,3 +18,9 @@ notifications:
       - crashmx@inbox.ru
     on_success: never # default: change
     on_failure: always # default: always
+
+env:
+
+  global:
+
+    - CODECOV_TOKEN="42326aa7-dc15-4116-88f4-9b874fe6cd75"
