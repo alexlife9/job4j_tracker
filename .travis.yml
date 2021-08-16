@@ -23,4 +23,4 @@ env:
 
   global:
 
-    - CODECOV_TOKEN="42326aa7-dc15-4116-88f4-9b874fe6cd75"
+    - CODECOV_TOKEN="e9cb94b3-4390-41d0-8193-6beceb788b57"
