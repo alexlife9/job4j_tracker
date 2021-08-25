@@ -22,7 +22,7 @@ public class AttachmentSort {
         attachments.sort(comparatorSize);
         System.out.println(attachments);
 
-        Comparator comparatorName = new Comparator<Attachment>() {
+        Comparator<Attachment> comparatorName = new Comparator<Attachment>() {
             @Override
             public int compare(Attachment left, Attachment right) {
                 return left.getName().compareTo(right.getName());
