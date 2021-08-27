@@ -9,14 +9,14 @@ import java.util.function.*;
 public class FunctionalInterfaces {
     public static void main(String[] args) {
         Map<Integer, String> map = new HashMap<>();
-        map.put(1, "o");
-        map.put(2, "two");
-        map.put(3, "three");
-        map.put(4, "four");
-        map.put(5, "five");
-        map.put(6, "six");
-        map.put(7, "seven");
-        BiConsumer<Integer, String> biCon = (integer, s) -> new HashMap<>(map);
+        BiConsumer<Integer, String> biCon = (i, s) -> map.put(i, s);
+        biCon.accept(1, "o");
+        biCon.accept(2, "two");
+        biCon.accept(3, "three");
+        biCon.accept(4, "four");
+        biCon.accept(5, "five");
+        biCon.accept(6, "six");
+        biCon.accept(7, "seven");
         System.out.println(map.size());
         System.out.println(map.values());
 
