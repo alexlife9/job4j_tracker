@@ -1,5 +1,7 @@
 package ru.job4j.stream;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -49,7 +51,7 @@ public class StreamUsage {
                 .reduce(0L, Long::sum);
         System.out.println("Время на задачи: " + total);
 
-        List<Integer> numbers = List.of(1, -1, 2, -2, 3, -3);
+        List<Integer> numbers = Arrays.asList(1, -1, 2, -2, 3, -3);
         List<Integer> positiveNumbers = numbers.stream()
                 .filter(num -> num > 0)
                 .collect(Collectors.toList());
