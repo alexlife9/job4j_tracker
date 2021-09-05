@@ -19,7 +19,8 @@ public class ProfilesTest {
                 new Profile(oleg),
                 new Profile(lena)
         );
+        List<Address> result = Profiles.collect(prof);
         List<Address> expected = Arrays.asList(alex, oleg, lena);
-        assertThat(prof, is(expected));
+        assertThat(result, is(expected));
     }
 }
