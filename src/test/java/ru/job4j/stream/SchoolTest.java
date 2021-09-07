@@ -67,18 +67,18 @@ public class SchoolTest {
         assertThat(rsl, is(expected));
     }
 
-//    @Test
-//    public void whenCollectAddMap() { //(0: 50)
-//        List<Student> students = List.of(
-//                new Student(10, "Surname1"),
-//                new Student(10, "Surname1"),
-//                new Student(40, "Surname4")
-//        );
-//        School sc = new School();
-//        Map<String, Student> rsl = sc.collectMap(students);
-//        Map<String, Student> expected = new HashMap<>();
-//        expected.put(new Student(10, "Surname1"));
-//        expected.put(new Student(40, "Surname4"));
-//        assertThat(rsl, is(expected));
-//    }
+    @Test
+    public void whenCollectAddMap() { //(0: 50)
+        List<Student> students = List.of(
+                new Student(10, "Surname1"),
+                new Student(10, "Surname1"),
+                new Student(40, "Surname4")
+        );
+        School sc = new School();
+        Map<String, Student> rsl = sc.collectMap(students);
+        Map<String, Student> expected = new HashMap<>();
+        expected.put("Surname1", new Student(10, "Surname1"));
+        expected.put("Surname4", new Student(40, "Surname4"));
+        assertThat(rsl, is(expected));
+    }
 }
