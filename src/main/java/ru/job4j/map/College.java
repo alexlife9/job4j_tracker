@@ -17,12 +17,6 @@ public class College {
                 .findFirst()
                 .orElse(null);
     }
-//        for (Student s : students.keySet()) {
-//            if (s.getAccount().equals(account)) {
-//                return s;
-//            }
-//        }
-//        return null;
 
     public Subject findBySubjectName(String account, String name) {
         Student a = findByAccount(account);
@@ -35,19 +29,10 @@ public class College {
         }
         return null;
     }
-//        Student a = findByAccount(account);
-//        if (a != null) {
-//            Set<Subject> subjects = students.get(a);
-//            for (Subject s : subjects) {
-//                if (s.getName().equals(name)) {
-//                    return s;
-//                }
-//            }
-//        }
-//        return null;
 
     public static void main(String[] args) {
-        Map<Student, Set<Subject>> students = Map.of(new Student("Student", "000001", "201-18-15"),
+        Map<Student, Set<Subject>> students =
+                Map.of(new Student("Student", "000001", "201-18-15"),
                 Set.of(
                         new Subject("Math", 70),
                         new Subject("English", 85)
