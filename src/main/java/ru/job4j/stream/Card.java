@@ -20,9 +20,9 @@ public class Card {
     }
 
     public static void main(String[] args) {
-        Stream.of(Value.values())
-                .flatMap(suit -> Stream.of(Suit.values())
-                        .map(value -> suit + " " + value))
+        Stream.of(Suit.values())
+                .flatMap(suit -> Stream.of(Value.values())
+                        .map(value -> suit + ": " + value))
                 .forEach(System.out::println);
     }
 }
