@@ -72,8 +72,22 @@ public class User {
         }
     }
 
+    @Override
+    public String toString() {
+        return "User{"
+                + "name='" + name + '\''
+                + ", surname='" + surname + '\''
+                + ", age=" + age
+                + ", login='" + login + '\''
+                + ", password='" + password + '\''
+                + ", activated=" + activated
+                + ", gender='" + gender + '\''
+                + '}';
+    }
+
     public static void main(String[] args) {
-        User user = new Builder().buildName("name")
+        User user = new Builder()
+                .buildName("name")
                 .buildSurname("surname")
                 .buildAge((byte) 32)
                 .buildLogin("login")
@@ -82,5 +96,14 @@ public class User {
                 .buildGender("male")
                 .build();
         System.out.println(user);
+        System.out.println();
+        User user2 = new Builder()
+                .buildName("Alex")
+                .buildAge((byte) 40)
+                .buildActivated(true)
+                .buildLogin("login")
+                .buildPassword("pass")
+                .build();
+        System.out.println(user2);
     }
 }
