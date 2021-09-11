@@ -19,6 +19,14 @@ public class Card {
         V_6, V_7, V_8
     }
 
+    @Override
+    public String toString() {
+        return "Card{"
+                + "suit=" + suit
+                + ", valueNum=" + valueNum
+                + '}';
+    }
+
     public static void main(String[] args) {
         Stream.of(Suit.values())
                 .flatMap(suit -> Stream.of(ValueNum.values())
