@@ -4,25 +4,25 @@ import java.util.stream.Stream;
 
 public class Card {
     private Suit suit;
-    private Value value;
+    private ValueNum valueNum;
 
-    public Card(Suit suit, Value value) {
+    public Card(Suit suit, ValueNum valueNum) {
         this.suit = suit;
-        this.value = value;
+        this.valueNum = valueNum;
     }
 
     public enum Suit {
         Diamonds, Hearts, Spades, Clubs
     }
 
-    public enum Value {
+    public enum ValueNum {
         V_6, V_7, V_8
     }
 
     public static void main(String[] args) {
         Stream.of(Suit.values())
-                .flatMap(suit -> Stream.of(Value.values())
-                        .map(value -> suit + ": " + value))
+                .flatMap(suit -> Stream.of(ValueNum.values())
+                        .map(valueNum -> new Card(suit, valueNum)))
                 .forEach(System.out::println);
     }
 }
