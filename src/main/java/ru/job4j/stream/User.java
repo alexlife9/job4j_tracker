@@ -23,53 +23,53 @@ public class User {
         private String password;
         private boolean activated;
         private String gender;
-    }
 
-    Builder buildName(String name) {
-        this.name = name;
-        return this;
-    }
+        Builder buildName(String name) {
+            this.name = name;
+            return this;
+        }
 
-    Builder buildSurname(String surname) {
-        this.surname = surname;
-        return this;
-    }
+        Builder buildSurname(String surname) {
+            this.surname = surname;
+            return this;
+        }
 
-    Builder buildAge(byte age) {
-        this.age = age;
-        return this;
-    }
+        Builder buildAge(byte age) {
+            this.age = age;
+            return this;
+        }
 
-    Builder buildLogin(String login) {
-        this.login = login;
-        return this;
-    }
+        Builder buildLogin(String login) {
+            this.login = login;
+            return this;
+        }
 
-    Builder buildPassword(String password) {
-        this.password = password;
-        return this;
-    }
+        Builder buildPassword(String password) {
+            this.password = password;
+            return this;
+        }
 
-    Builder buildActivated(boolean activated) {
-        this.activated = activated;
-        return this;
-    }
+        Builder buildActivated(boolean activated) {
+            this.activated = activated;
+            return this;
+        }
 
-    Builder buildGender(String gender) {
-        this.gender = gender;
-        return this;
-    }
+        Builder buildGender(String gender) {
+            this.gender = gender;
+            return this;
+        }
 
-    User build() {
-        User user = new User();
-        user.name = name;
-        user.surname = surname;
-        user.age = age;
-        user.login = login;
-        user.password = password;
-        user.activated = activated;
-        user.gender = gender;
-        return user;
+        User build() {
+            User user = new User();
+            user.name = name;
+            user.surname = surname;
+            user.age = age;
+            user.login = login;
+            user.password = password;
+            user.activated = activated;
+            user.gender = gender;
+            return user;
+        }
     }
 
     public static void main(String[] args) {
