@@ -11,7 +11,7 @@ public class MatrixTest {
     @Test
     public void whenInteger1to6() {
         Integer[][] matrix = {{1, 2}, {3, 4}, {5, 6}};
-        List<Integer> expected = Arrays.asList(1, 2, 3, 4, 5, 6);
+        List<Integer> expected = List.of(1, 2, 3, 4, 5, 6);
         assertEquals(expected, Matrix.convertMatrix(matrix));
     }
 }

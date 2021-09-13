@@ -13,39 +13,39 @@ import static org.junit.Assert.assertEquals;
 public class SortByNameTest {
     @Test
     public void whenSortByNameUp() {
-        List<Item> items = Arrays.asList(
+        List<Item> items = List.of(
                 new Item("Ivan"),
                 new Item("Petr"),
                 new Item("Alex"),
                 new Item("Stas")
         );
-        List<Item> rsl = Arrays.asList(
+        List<Item> rsl = List.of(
                 new Item("Alex"),
                 new Item("Ivan"),
                 new Item("Petr"),
                 new Item("Stas")
         );
         List<Item> sorted = new ArrayList<>(items);
-        Collections.sort(sorted, new SortByNameUp());
+        sorted.sort(new SortByNameUp());
         assertEquals(rsl, sorted);
     }
 
     @Test
     public void whenSortByNameDawn() {
-        List<Item> items = Arrays.asList(
+        List<Item> items = List.of(
                 new Item("Ivan"),
                 new Item("Petr"),
                 new Item("Alex"),
                 new Item("Stas")
         );
-        List<Item> rsl = Arrays.asList(
+        List<Item> rsl = List.of(
                 new Item("Stas"),
                 new Item("Petr"),
                 new Item("Ivan"),
                 new Item("Alex")
         );
         List<Item> sorted = new ArrayList<>(items);
-        Collections.sort(sorted, new SortByNameDown());
+        sorted.sort(new SortByNameDown());
         assertEquals(rsl, sorted);
     }
 }

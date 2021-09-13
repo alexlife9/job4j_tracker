@@ -14,13 +14,13 @@ public class ProfilesTest {
         Address alex = new Address("EKB", "Lenina", 13, 28);
         Address oleg = new Address("SPB", "Fontanka", 9, 75);
         Address lena = new Address("MSK", "Putina", 100, 3000);
-        List<Profile> prof = Arrays.asList(
+        List<Profile> prof = List.of(
                 new Profile(alex),
                 new Profile(oleg),
                 new Profile(lena)
         );
         List<Address> result = Profiles.collect(prof);
-        List<Address> expected = Arrays.asList(alex, oleg, lena);
+        List<Address> expected = List.of(alex, oleg, lena);
         assertThat(result, is(expected));
     }
 
@@ -29,13 +29,13 @@ public class ProfilesTest {
         Address alex = new Address("EKB", "Lenina", 13, 28);
         Address oleg = new Address("SPB", "Fontanka", 9, 75);
         Address lena = new Address("EKB", "Lenina", 13, 28);
-        List<Profile> prof = Arrays.asList(
+        List<Profile> prof = List.of(
                 new Profile(alex),
                 new Profile(oleg),
                 new Profile(lena)
         );
         List<Address> result = Profiles.collectUnic(prof);
-        List<Address> expected = Arrays.asList(alex, oleg);
+        List<Address> expected = List.of(alex, oleg);
         assertThat(result, is(expected));
     }
 }
