@@ -1,5 +1,7 @@
 package ru.job4j.search;
 
+import java.util.Objects;
+
 public class Person {
     private String name;
     private String surname;
