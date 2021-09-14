@@ -3,7 +3,7 @@ package ru.job4j.bank;
 import java.util.Objects;
 
 /**
- * класс описывает клиента по паспорту и имени
+ * класс User описывает клиента по паспорту и имени
  * @author Alex_life
  * @version 1.0
  */
@@ -17,32 +17,28 @@ public class User {
     }
 
     /**
-     * возвращаем данные паспорта
-     * @return
+     * @return возвращаем данные паспорта
      */
     public String getPassport() {
         return passport;
     }
 
     /**
-     * изменяем или устанавливаем новые данные паспорта
-     * @param passport
+     * @param passport изменяем или устанавливаем новые данные паспорта
      */
     public void setPassport(String passport) {
         this.passport = passport;
     }
 
     /**
-     * возвращаем ФИО клиента
-     * @return
+     * @return возвращаем ФИО клиента
      */
     public String getUsername() {
         return username;
     }
 
     /**
-     * изменяем или устанавливаем новые ФИО клиента
-     * @param username
+     * @param username изменяем или устанавливаем новые ФИО клиента
      */
     public void setUsername(String username) {
         this.username = username;

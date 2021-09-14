@@ -26,7 +26,7 @@ public class BankService {
      * присваиваем клиенту его паспорт и создаем дл него персональный аккаунт в банке
      * проверяем по имени что клиента еще нет в списке клиентов банка
      * @param passport
-     * @param account
+     * @param account - описание параметра
      */
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
