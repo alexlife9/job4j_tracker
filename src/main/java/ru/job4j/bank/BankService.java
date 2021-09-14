@@ -19,7 +19,7 @@ public class BankService {
      * @param user
      */
     public void addUser(User user) {
-        users.putIfAbsent(user, new ArrayList<Account>());
+        users.putIfAbsent(user, new ArrayList<>());
     }
 
     /**
@@ -49,12 +49,6 @@ public class BankService {
                 .filter(s -> s.getPassport().equals(passport))
                 .findFirst()
                 .orElse(null);
-//        for (User user : users.keySet()) {
-//            if (user.getPassport().equals(passport)) {
-//                return user;
-//            }
-//        }
-//        return null;
     }
 
     /**
@@ -73,15 +67,6 @@ public class BankService {
                     .orElse(null);
         }
         return null;
-//        if (user != null) {
-//            List<Account> userAcc = users.get(user);
-//            for (Account account : userAcc) {
-//                if (account.getRequisite().equals(requisite)) {
-//                    return account;
-//                }
-//            }
-//        }
-//        return null;
     }
 
     /**
