@@ -8,14 +8,13 @@ import java.util.*;
  * класс описывает пример работы простого банковского сервиса
  * на основании паспортных данных клиента и его банковских счетов
  * @author Alex_life
- * @version 1.0
+ * @version 2.0
  */
 public class BankService {
     private Map<User, List<Account>> users = new HashMap<>();
 
     /**
-     * добавляем имя клиента в изначально пустой список пользователй
-     * @param user
+     * @param user добавляем имя клиента в изначально пустой список пользователй
      */
     public void addUser(User user) {
         users.putIfAbsent(user, new ArrayList<>());
@@ -23,8 +22,7 @@ public class BankService {
 
     /**
      * присваиваем клиенту его паспорт и создаем дл него персональный аккаунт в банке
-     * проверяем по имени что клиента еще нет в списке клиентов банка
-     * @param passport
+     * @param passport проверяем по имени что клиента еще нет в списке клиентов банка
      * @param account - описание параметра
      */
     public void addAccount(String passport, Account account) {
@@ -38,8 +36,7 @@ public class BankService {
     }
 
     /**
-     * в списке банка ищем клиента по номеру паспорта
-     * @param passport
+     * @param passport в списке банка ищем клиента по номеру паспорта
      * @return возвращает клиента или null если клиент не найден
      */
     public Optional<User> findByPassport(String passport) {
@@ -50,9 +47,8 @@ public class BankService {
         }
 
     /**
-     * ищем номер счета клиента по его паспорту
-     * @param passport
-     * @param requisite
+     * @param passport ищем номер счета клиента по его паспорту
+     * @param requisite номер счета
      * @return возвращаем номер счета или null если счет не найден
      */
     public Optional<Account> findByRequisite(String passport, String requisite) {

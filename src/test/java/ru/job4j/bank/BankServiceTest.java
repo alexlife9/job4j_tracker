@@ -56,3 +56,4 @@ public class BankServiceTest {
         assertThat(bank.findByRequisite("3434", "1122").get().getBalance(), is(300D));
     }
 }
+
