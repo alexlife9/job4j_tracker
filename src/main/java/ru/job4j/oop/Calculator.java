@@ -32,8 +32,8 @@ package ru.job4j.oop;
  * Для этого им нужны ссылки на объект.
  *
  * @author Alex_life
- * @version 1.0
- * @since 23.07.2022
+ * @version 2.0
+ * @since 24.07.2022
  */
 public class Calculator {
 
@@ -66,17 +66,13 @@ public class Calculator {
         int rsl2 = Calculator.minus(15);
         System.out.println(rsl2);
 
-        Calculator calculator2 = new Calculator();
-        int rsl3 = calculator2.divide(30);
-        System.out.println(rsl3);
-
-        Calculator calculator3 = new Calculator();
-        int rsl4 = calculator3.sumAllOperation(100);
-        System.out.println(rsl4);
-
         Calculator calculator = new Calculator();
         int rsl = calculator.multiply(5);
+        int rsl3 = calculator.divide(30);
+        int rsl4 = calculator.sumAllOperation(100);
         System.out.println(rsl);
+        System.out.println(rsl3);
+        System.out.println(rsl4);
     }
 }
 
