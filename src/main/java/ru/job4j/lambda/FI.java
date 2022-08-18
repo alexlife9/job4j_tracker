@@ -10,12 +10,14 @@ public class FI {
                 new Attachment("image 3", 120),
                 new Attachment("image 2", 23)
         };
-//        Comparator<Attachment> comparator = new Comparator<Attachment>() {
-//            @Override
-//            public int compare(Attachment left, Attachment right) {
-//                return left.getSize() - right.getSize();
-//            }
-//        };
+        /**
+         *         Comparator<Attachment> comparator = new Comparator<Attachment>() {
+         *             @Override
+         *             public int compare(Attachment left, Attachment right) {
+         *                 return left.getSize() - right.getSize();
+         *             }
+         *         };
+         */
         Comparator<Attachment> comparator = Comparator.comparingInt(Attachment::getSize);
         Comparator<String> cmpSize = Comparator.comparingInt(String::length);
         Comparator<String> cmpText = String::compareTo;

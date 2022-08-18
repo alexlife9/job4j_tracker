@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 
 public class SchoolTest {
     @Test
-    public void whenCollectClassA() { //[70: 100]
+    public void whenCollectClassA() { /*[70: 100]*/
         List<Student> students = List.of(
                 new Student(10, "Surname1"),
                 new Student(40, "Surname4"),
@@ -32,7 +32,7 @@ public class SchoolTest {
     }
 
     @Test
-    public void whenCollectClassB() { //[50: 70)
+    public void whenCollectClassB() { /*[50: 70)*/
         List<Student> students = List.of(
                 new Student(20, "Surname2"),
                 new Student(30, "Surname3"),
@@ -51,7 +51,7 @@ public class SchoolTest {
     }
 
     @Test
-    public void whenCollectClassV() { //(0: 50)
+    public void whenCollectClassV() { /*(0: 50)*/
         List<Student> students = List.of(
                 new Student(10, "Surname1"),
                 new Student(30, "Surname3"),
@@ -70,7 +70,7 @@ public class SchoolTest {
     }
 
     @Test
-    public void whenCollectAddMap() { //(0: 50)
+    public void whenCollectAddMap() { /*(0: 50)*/
         List<Student> students = List.of(
                 new Student(10, "Surname1"),
                 new Student(10, "Surname1"),

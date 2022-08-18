@@ -4,19 +4,20 @@ public class Gun {
     private int caliber;
     private int barrelLength;
 
-    public Gun(int cal, int length) { //делаем конструктор для пушки:
+    public Gun(int cal, int length) { делаем конструктор для пушки:
         this.caliber = cal;
         this.barrelLength = length;
     }
 
-    public int GetCaliber() { //делаем метод для получения калибра из других классов:
+    public int GetCaliber() { делаем метод для получения калибра из других классов:
         return this.caliber;
     }
 
     public boolean IsOnTarget(int dice) {
         return (barrelLength + dice) > 100;
     }
-}*/
+}
+*/
 
 /*
 https://habr.com/ru/post/354046/

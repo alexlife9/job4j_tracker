@@ -3,7 +3,7 @@ package ru.job4j.implementation;
 public class Engineer extends Profession {
 
     private String drawing;
-    private double scaleDrawing; //масштаб чертежа
+    private double scaleDrawing;
 
     public Engineer(String name, String surname, String education, double birthday,
                     String drawing, double scaleDrawing) {

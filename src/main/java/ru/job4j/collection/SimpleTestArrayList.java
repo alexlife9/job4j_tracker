@@ -6,15 +6,6 @@ public class SimpleTestArrayList {
 
     public static void main(String[] args) {
         ArrayList<String> list = new ArrayList<>();
-//        list.add("test1");
-//        list.add("test2");
-//        list.add("test3");
-//        System.out.print(list.get(1) + ":");
-//        list.add(1, "test4");
-//        System.out.print(list.get(1) + ":");
-//        for (String s : list) {
-//            System.out.print(s + ":");
-//        }
         String t1 = "test1";
         String t2 = "test2";
         list.add(t1);

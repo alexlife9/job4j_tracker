@@ -2,7 +2,7 @@ package ru.job4j.implementation;
 
 public class Dentist extends Doctor {
 
-    private String caries; //тип кариеса
+    private String caries;
 
     public Dentist(String name, String surname, String education, double birthday,
                    String nameHospital, String diagnosis, String caries) {

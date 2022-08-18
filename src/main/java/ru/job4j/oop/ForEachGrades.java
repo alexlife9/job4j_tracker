@@ -8,7 +8,9 @@ package ru.job4j.oop;
 
 public class ForEachGrades {
 
-    //метод, который распечатывает все оценки
+    /**
+     * метод, который распечатывает все оценки
+     */
     public static void printAllGrades(int[] grades) {
         System.out.print("|");
         for (int num : grades) {
@@ -18,7 +20,11 @@ public class ForEachGrades {
         System.out.println();
     }
 
-//метод, в котором выводится средняя оценка
+    /**
+     * метод, в котором выводится средняя оценка
+     * @param numbers
+     * @return
+     */
     public static double midGrade(int[] numbers) {
         int grade = 0;
 
@@ -29,7 +35,11 @@ public class ForEachGrades {
 
     }
 
-    //метод в котором вычисляется лучшая (максимальная) оценка
+    /**
+     * метод в котором вычисляется лучшая (максимальная) оценка
+     * @param numbers
+     * @return
+     */
     public static int bestGrade(int[] numbers) {
         int maxGrade = numbers[0];
 
@@ -42,7 +52,6 @@ public class ForEachGrades {
     }
 
     public static void main(String[] args) {
-//массив оценок
         int[] grades = {5, 10, 7, 8, 9, 9, 10, 12};
         int highestMarks = bestGrade(grades);
         System.out.print("All the grades: ");
