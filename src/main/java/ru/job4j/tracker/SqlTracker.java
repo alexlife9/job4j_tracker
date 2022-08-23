@@ -10,8 +10,8 @@ import java.util.Properties;
  * Трекер SQL
  *
  * @author Alex_life
- * @version 1.0
- * @since 20.08.2022
+ * @version 2.0
+ * @since 23.08.2022
  */
 public class SqlTracker implements Store, AutoCloseable {
 
