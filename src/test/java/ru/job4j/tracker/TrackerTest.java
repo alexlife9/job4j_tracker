@@ -9,7 +9,7 @@ public class TrackerTest {
     @Test
     public void whenAddNewItemThenTrackerHasSameItem() {
         MemTracker tracker = new MemTracker();
-        Item item = new Item();
+        Item item = new Item(resultSet.getInt("id"), resultSet.getString("name"), resultSet.getTimestamp("created"));
         item.setName("test1");
         tracker.add(item);
         Item result = tracker.findById(item.getId());
@@ -19,11 +19,11 @@ public class TrackerTest {
     @Test
     public void whenReplace() {
         MemTracker tracker = new MemTracker();
-        Item bug = new Item();
+        Item bug = new Item(resultSet.getInt("id"), resultSet.getString("name"), resultSet.getTimestamp("created"));
         bug.setName("Bug");
         tracker.add(bug);
         int id = bug.getId();
-        Item bugWithDesc = new Item();
+        Item bugWithDesc = new Item(resultSet.getInt("id"), resultSet.getString("name"), resultSet.getTimestamp("created"));
         bugWithDesc.setName("Bug with description");
         tracker.replace(id, bugWithDesc);
         assertThat(tracker.findById(id).getName(), is("Bug with description"));
@@ -32,7 +32,7 @@ public class TrackerTest {
     @Test
     public void whenDelete() {
         MemTracker tracker = new MemTracker();
-        Item bug = new Item();
+        Item bug = new Item(resultSet.getInt("id"), resultSet.getString("name"), resultSet.getTimestamp("created"));
         bug.setName("Bug");
         tracker.add(bug);
         int id = bug.getId();
