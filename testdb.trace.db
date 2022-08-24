@@ -1,12 +1,21 @@
-2022-08-24 22:47:10 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DATABASECHANGELOGLOCK" not found (this database is empty); SQL statement:
-SELECT COUNT(*) FROM DATABASECHANGELOGLOCK [42104-214]
-2022-08-24 22:47:10 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DATABASECHANGELOGLOCK" not found (this database is empty); SQL statement:
-SELECT COUNT(*) FROM DATABASECHANGELOGLOCK [42104-214]
-2022-08-24 22:47:10 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DATABASECHANGELOGLOCK" not found (this database is empty); SQL statement:
-SELECT COUNT(*) FROM DATABASECHANGELOGLOCK [42104-214]
-2022-08-24 22:48:00 jdbc[3]: exception
+2022-08-25 02:18:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+insert into items(name, created) values (?, ?) [42104-214]
+2022-08-25 02:18:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+select * from items where items.id = ? [42104-214]
+2022-08-25 02:18:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+delete from items [42104-214]
+2022-08-25 02:20:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+insert into items(name, created) values (?, ?) [42104-214]
+2022-08-25 02:20:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+select * from items where items.id = ? [42104-214]
+2022-08-25 02:20:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ITEMS" not found (this database is empty); SQL statement:
+delete from items [42104-214]
+2022-08-25 02:23:44 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DATABASECHANGELOGLOCK" not found (this database is empty); SQL statement:
 SELECT COUNT(*) FROM DATABASECHANGELOGLOCK [42104-214]

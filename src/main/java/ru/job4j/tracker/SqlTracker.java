@@ -11,8 +11,8 @@ import java.util.Properties;
  * Трекер SQL
  *
  * @author Alex_life
- * @version 3.0
- * @since 23.08.2022
+ * @version 4.0
+ * @since 25.08.2022
  */
 public class SqlTracker implements Store, AutoCloseable {
 
@@ -145,7 +145,7 @@ public class SqlTracker implements Store, AutoCloseable {
         return new Item(
                 rsl.getInt("id"),
                 rsl.getString("name"),
-                rsl.getTimestamp("created")
+                rsl.getTimestamp("created").toLocalDateTime()
         );
     }
 }
