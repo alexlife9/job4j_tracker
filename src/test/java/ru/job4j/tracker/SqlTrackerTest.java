@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Properties;
 
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -18,7 +19,7 @@ import static org.junit.Assert.assertTrue;
  * Liquibase. Интеграционные тесты
  *
  * @author Alex_life
- * @version 2.0
+ * @version 3.0
  * @since 26.08.2022
  */
 public class SqlTrackerTest {
@@ -86,7 +87,7 @@ public class SqlTrackerTest {
     public void whenReplace() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item = tracker.add(new Item("item"));
-        Item item1 = tracker.add(new Item("item1"));
+        Item item1 = new Item("item1");
         assertTrue(tracker.replace(item.getId(), item1));
         assertThat(tracker.findById(item.getId()).getName(), is(item1.getName()));
     }
@@ -96,6 +97,7 @@ public class SqlTrackerTest {
         SqlTracker tracker = new SqlTracker(connection);
         Item item2 = tracker.add(new Item("item2"));
         assertTrue(tracker.delete(item2.getId()));
+        assertThat(tracker.findById(item2.getId()), is(nullValue()));
     }
 
     @Test
