@@ -124,7 +124,7 @@ public class SqlTrackerTest {
         Item item1 = tracker.add(new Item("item1"));
         Item item2 = tracker.add(new Item("item2"));
         Item item3 = tracker.add(new Item("item3"));
-        assertThat(tracker.findById(item3.getId()), is(List.of(item3)));
+        assertThat(tracker.findById(item3.getId()), is(item3));
     }
 }
 
