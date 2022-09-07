@@ -8,7 +8,7 @@ import static org.junit.Assert.assertThrows;
  * Валидатор пароля
  *
  * @author Alex_life
- * @version 2.0
+ * @version 3.0
  * @since 07.09.2022
  */
 public class PasswordValidatorTest {
@@ -18,9 +18,7 @@ public class PasswordValidatorTest {
         String wrongPassword = "password";
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
-                () -> {
-                    PasswordValidator.validate(wrongPassword);
-                });
+                () -> PasswordValidator.validate(wrongPassword));
         assertThat(exception.getMessage())
                 .isEqualTo("Пароль не должен быть таким: qwerty, 12345, password, admin, user");
     }
@@ -30,9 +28,7 @@ public class PasswordValidatorTest {
         String wrongPassword = "Pass567";
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
-                () -> {
-                    PasswordValidator.validate(wrongPassword);
-                });
+                () -> PasswordValidator.validate(wrongPassword));
         assertThat(exception.getMessage()).isEqualTo("Длина пароля должна находиться в диапазоне [8, 32]");
     }
 
@@ -41,9 +37,7 @@ public class PasswordValidatorTest {
         String wrongPassword = "pass56789";
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
-                () -> {
-                    PasswordValidator.validate(wrongPassword);
-                });
+                () -> PasswordValidator.validate(wrongPassword));
         assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать хотя бы один символ в верхнем регистре");
     }
 
@@ -52,9 +46,7 @@ public class PasswordValidatorTest {
         String wrongPassword = "PAS56789";
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
-                () -> {
-                    PasswordValidator.validate(wrongPassword);
-                });
+                () -> PasswordValidator.validate(wrongPassword));
         assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать хотя бы один символ в нижнем регистре");
     }
 
@@ -63,9 +55,7 @@ public class PasswordValidatorTest {
         String wrongPassword = "PasPasPa%";
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
-                () -> {
-                    PasswordValidator.validate(wrongPassword);
-                });
+                () -> PasswordValidator.validate(wrongPassword));
         assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать хотя бы одну цифру");
     }
 
@@ -74,9 +64,7 @@ public class PasswordValidatorTest {
         String wrongPassword = "Pass56789";
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
-                () -> {
-                    PasswordValidator.validate(wrongPassword);
-                });
+                () -> PasswordValidator.validate(wrongPassword));
         assertThat(exception.getMessage())
                 .isEqualTo("Пароль должен содержать хотя бы один спецсимвол (не цифра и не буква)");
     }
