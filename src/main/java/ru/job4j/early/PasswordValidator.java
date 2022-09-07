@@ -1,5 +1,7 @@
 package ru.job4j.early;
 
+import java.util.Locale;
+
 /**
  * Валидатор пароля
  *
@@ -42,8 +44,9 @@ package ru.job4j.early;
  * Реализовать Unit тесты, которые учитывают все условия, реализованные в методе validate();
 
  * @author Alex_life
- * @version 1.0
- * @since 06.09.2022
+ * @version 2.0
+ * поправил логику
+ * @since 07.09.2022
 */
 public class PasswordValidator {
 
@@ -52,20 +55,17 @@ public class PasswordValidator {
     private static char[] chars;
 
     public static String validate(String password) {
-
         pass = password;
-        if (password != null) {
-            chars = pass.toCharArray();
-        }
+        chars = pass.toCharArray();
 
         String[] word = {"qwerty", "12345", "password", "admin", "user"};
         for (String pas : word) {
-            assert password != null;
-            if (password.toLowerCase().contains(pas)) {
+            if (password.toLowerCase().contains(pas.toLowerCase(Locale.ROOT))) {
                 message("Пароль не должен быть таким: qwerty, 12345, password, admin, user");
             }
         }
 
+        checkNull();
         checkLength();
         checkUpSymbol();
         checkLowSymbol();
@@ -73,6 +73,12 @@ public class PasswordValidator {
         checkDigit();
 
         return "Пароль подходит";
+    }
+
+    private static void checkNull() {
+        if (pass == null) {
+            message("Необходимо заполнить пароль");
+        }
     }
 
     private static void checkLength() {
@@ -86,6 +92,7 @@ public class PasswordValidator {
         for (char symbol : chars) {
             if (Character.isUpperCase(symbol)) {
                 check = true;
+                break;
             }
         }
         if (!check) {
@@ -98,6 +105,7 @@ public class PasswordValidator {
         for (char symbol : chars) {
             if (Character.isLowerCase(symbol)) {
                 check = true;
+                break;
             }
         }
         if (!check) {
@@ -110,6 +118,7 @@ public class PasswordValidator {
         for (char symbol : chars) {
             if (Character.isDigit(symbol)) {
                 check = true;
+                break;
             }
         }
         if (!check) {
@@ -120,8 +129,7 @@ public class PasswordValidator {
     private static void checkSpecialSymbol() {
         boolean check = false;
         for (char symbol : chars) {
-            String specialChars = String.valueOf(symbol);
-            if (specialChars.substring(symbol).matches("[^A-Za-z0-9 ]")) {
+            if (!Character.isLetterOrDigit(symbol)) {
                 check = true;
                 break;
             }

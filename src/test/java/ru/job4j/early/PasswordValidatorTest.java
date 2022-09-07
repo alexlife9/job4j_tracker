@@ -8,8 +8,8 @@ import static org.junit.Assert.assertThrows;
  * Валидатор пароля
  *
  * @author Alex_life
- * @version 1.0
- * @since 06.09.2022
+ * @version 2.0
+ * @since 07.09.2022
  */
 public class PasswordValidatorTest {
 
@@ -60,7 +60,7 @@ public class PasswordValidatorTest {
 
     @Test
     void whenDigit() {
-        String wrongPassword = "PasPasPas";
+        String wrongPassword = "PasPasPa%";
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> {
@@ -71,7 +71,7 @@ public class PasswordValidatorTest {
 
     @Test
     void whenSpecialSymbol() {
-        String wrongPassword = "Pass567";
+        String wrongPassword = "Pass56789";
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> {
@@ -83,14 +83,8 @@ public class PasswordValidatorTest {
 
     @Test
     void whenCorrectPass() {
-        String password = "Pass567%";
-        IllegalArgumentException exception = assertThrows(
-                IllegalArgumentException.class,
-                () -> {
-                    PasswordValidator.validate(password);
-                });
-        assertThat(exception.getMessage())
-                .isEqualTo("Пароль подходит");
+        String password = "Pass5678%";
+        assertThat(PasswordValidator.validate(password)).isEqualTo("Пароль подходит");
     }
 
 }
