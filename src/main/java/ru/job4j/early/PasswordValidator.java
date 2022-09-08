@@ -1,7 +1,5 @@
 package ru.job4j.early;
 
-import java.util.Locale;
-
 /**
  * Валидатор пароля
  *
@@ -44,9 +42,9 @@ import java.util.Locale;
  * Реализовать Unit тесты, которые учитывают все условия, реализованные в методе validate();
 
  * @author Alex_life
- * @version 2.0
- * поправил логику
- * @since 07.09.2022
+ * @version 3.0
+ * улучшение кода
+ * @since 08.09.2022
 */
 public class PasswordValidator {
 
@@ -55,17 +53,20 @@ public class PasswordValidator {
     private static char[] chars;
 
     public static String validate(String password) {
+        if (password == null) {
+            message("Необходимо заполнить пароль");
+        }
+
         pass = password;
         chars = pass.toCharArray();
 
         String[] word = {"qwerty", "12345", "password", "admin", "user"};
         for (String pas : word) {
-            if (password.toLowerCase().contains(pas.toLowerCase(Locale.ROOT))) {
+            if (password.toLowerCase().contains(pas)) {
                 message("Пароль не должен быть таким: qwerty, 12345, password, admin, user");
             }
         }
 
-        checkNull();
         checkLength();
         checkUpSymbol();
         checkLowSymbol();
@@ -73,12 +74,6 @@ public class PasswordValidator {
         checkDigit();
 
         return "Пароль подходит";
-    }
-
-    private static void checkNull() {
-        if (pass == null) {
-            message("Необходимо заполнить пароль");
-        }
     }
 
     private static void checkLength() {
