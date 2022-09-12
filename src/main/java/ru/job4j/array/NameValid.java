@@ -16,10 +16,11 @@ package ru.job4j.array;
  * Метод вернет true в том случае, если длина строки равна 0, иначе false.
  *
  * @author Alex_life
- * @version 1.0
- * @since 11.09.2022
+ * @version 2.0
+ * @since 12.09.2022
  */
 public class NameValid {
+    private final static String CHECKVALID = "^[a-z][a-zA-Z0-9_$]{0,}";
 
     /* метод проверяет валидность имени переменной */
     public static boolean isNameValid(String name) {
@@ -58,7 +59,7 @@ public class NameValid {
 
     /* метод регулярных выражений */
     public static boolean isNameValidAlternative(String name) {
-        return name.matches("^[a-z][a-zA-Z0-9_$]{0,}");
+        return name.matches(CHECKVALID);
     }
 
 }
