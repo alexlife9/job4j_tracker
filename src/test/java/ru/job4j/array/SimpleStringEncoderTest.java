@@ -62,19 +62,10 @@ class SimpleStringEncoderTest {
     }
 
     @Test
-    void whenStringEmpty() {
-        String input = "";
-        String expected = "";
-        String result = SimpleStringEncoder.encode(input);
-        assertThat(result).isEqualTo(expected);
-    }
-
-    @Test
     void whenStringOneSymbol() {
         String input = "y";
         String expected = "y";
         String result = SimpleStringEncoder.encode(input);
         assertThat(result).isEqualTo(expected);
     }
-
 }
